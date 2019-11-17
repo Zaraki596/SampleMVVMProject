@@ -1,3 +1,4 @@
+
 # Preview
 
 ![Gif](https://imgur.com/gallery/C1Gx1RE)
@@ -13,17 +14,20 @@ In card view their is two clickable button on which accept and decline makes the
 
  Tech Stack Used/Learned While Building this :
 ```
-..* Coroutines
-..* Room
-..* MVVM
+
+ - Kotlin
+ - Coroutines
+ - Room
+ - MVVM
+
 ```
 
 # ToDo:
 ```
-..* ~~ DI(Dependency Injection) **Implemented KodeIn Dependency Injection** ~~
-..* Offline Availability
-..* ~~ Bug Fixes ~~
+
+ -  ~~DI(Dependency Injection) **Implemented KodeIn Dependency
+   Injection**~~ 
+ - Offline Availability
+ - ~~Bug Fixes~~
+
 ```
-
-
-
