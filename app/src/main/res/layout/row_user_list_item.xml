@@ -34,7 +34,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio=""
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0"
@@ -42,42 +42,45 @@
 
             <TextView
                 android:id="@+id/tv_user_name"
+                style="@style/text_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                style="@style/text_style"
+                android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="163dp"
+                app:layout_constraintTop_toTopOf="@+id/guideline"
                 tools:text="@tools:sample/full_names" />
 
             <TextView
                 android:id="@+id/tv_user_gender"
+                style="@style/text_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/text_style"
                 app:layout_constraintEnd_toEndOf="@+id/tv_users_age"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_users_age"
                 app:layout_constraintTop_toBottomOf="@+id/tv_users_age"
                 tools:text="@tools:sample/first_names" />
 
             <TextView
                 android:id="@+id/tv_users_age"
+                style="@style/text_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/text_style"
                 app:layout_constraintEnd_toEndOf="@+id/tv_user_name"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/tv_user_name"
                 app:layout_constraintTop_toBottomOf="@+id/tv_user_name"
                 tools:text="@tools:sample/us_phones" />
 
             <TextView
                 android:id="@+id/tv_user_location"
+                style="@style/text_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/text_style"
                 android:layout_marginEnd="16dp"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_users_age"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_users_age"
                 tools:text="@tools:sample/cities" />
 
             <!--Accept Card View-->
@@ -86,14 +89,14 @@
                 android:id="@+id/divider"
                 android:layout_width="0dp"
                 android:layout_height="0.5dp"
-                android:layout_marginTop="48dp"
                 android:background="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/cv_user_image"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_user_location" />
 
-            <com.google.android.material.card.MaterialCardView
+            <!--  <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cvAccept"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -109,36 +112,13 @@
                 app:strokeColor="@color/colorPrimary"
                 app:strokeWidth="1dp">
 
-                <ImageView
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
-                    android:layout_gravity="right|center_horizontal"
-                    android:layout_margin="4dp"
-                    android:background="@drawable/circle_accept_bg"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_check" />
+
 
             </com.google.android.material.card.MaterialCardView>
-
+-->
             <!--Decline Card view-->
 
-            <TextView
-                android:id="@+id/tv_result"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/gradien_accept_bg"
-                android:textColor="@android:color/white"
-                android:textSize="24sp"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/cv_user_image"
-                app:layout_constraintEnd_toStartOf="@+id/tv_accept"
-                app:layout_constraintStart_toEndOf="@+id/tv_decline"
-                app:layout_constraintTop_toBottomOf="@+id/divider"
-                tools:text="@tools:sample/first_names" />
-
-            <com.google.android.material.card.MaterialCardView
+            <!-- <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cvDecline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -156,14 +136,53 @@
                 app:strokeColor="@color/colorAccent"
                 app:strokeWidth="1dp">
 
-                <ImageView
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
-                    android:layout_margin="4dp"
-                    android:background="@drawable/circle_decline_bg"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_close" />
-            </com.google.android.material.card.MaterialCardView>
+
+            </com.google.android.material.card.MaterialCardView>-->
+
+            <ImageView
+                android:id="@+id/iv_accept"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_gravity="right|center_horizontal"
+                android:layout_margin="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/circle_accept_bg"
+                android:padding="10dp"
+                android:src="@drawable/ic_check"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+            <TextView
+                android:id="@+id/tv_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/gradien_accept_bg"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/iv_accept"
+                app:layout_constraintStart_toStartOf="@+id/iv_decline"
+                app:layout_constraintTop_toBottomOf="@+id/divider"
+                tools:text="@tools:sample/first_names" />
+
+            <ImageView
+                android:id="@+id/iv_decline"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_margin="4dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/circle_decline_bg"
+                android:padding="10dp"
+                android:src="@drawable/ic_close"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_accept"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/iv_accept" />
 
             <TextView
                 android:id="@+id/tv_accept"
@@ -175,9 +194,9 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/cvAccept"
-                app:layout_constraintEnd_toStartOf="@+id/cvAccept"
-                app:layout_constraintTop_toTopOf="@+id/cvAccept" />
+                app:layout_constraintBottom_toBottomOf="@+id/iv_accept"
+                app:layout_constraintEnd_toStartOf="@+id/iv_accept"
+                app:layout_constraintTop_toTopOf="@+id/iv_accept" />
 
             <TextView
                 android:id="@+id/tv_decline"
@@ -188,21 +207,23 @@
                 android:textColor="@color/colorAccent"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/cvDecline"
-                app:layout_constraintStart_toEndOf="@+id/cvDecline"
-                app:layout_constraintTop_toTopOf="@+id/cvDecline" />
+                app:layout_constraintBottom_toBottomOf="@+id/iv_decline"
+                app:layout_constraintStart_toEndOf="@+id/iv_decline"
+                app:layout_constraintTop_toTopOf="@+id/iv_decline" />
 
             <androidx.constraintlayout.widget.Group
-                android:id="@+id/groupaccept"
+                android:id="@+id/removegroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:constraint_referenced_ids="cvAccept,tv_accept" />
+                android:visibility="visible"
+                app:constraint_referenced_ids="iv_decline,tv_accept,iv_accept,tv_decline" />
 
-            <androidx.constraintlayout.widget.Group
-                android:id="@+id/groupdecline"
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:constraint_referenced_ids="cvDecline,tv_decline" />
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent=".5" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

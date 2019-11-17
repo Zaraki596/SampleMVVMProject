@@ -29,6 +29,13 @@ android {
     dataBinding {
         enabled = true
     }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 dependencies {
@@ -86,6 +93,6 @@ dependencies {
     implementation "org.kodein.di:kodein-di-framework-android-x:6.4.1"
 
     // Better dateTime-time support even on older Android versions
-    implementation "com.jakewharton.threetenabp:threetenabp:1.1.0"
+    implementation 'com.jakewharton.threetenabp:threetenabp:1.2.1'
 
 }

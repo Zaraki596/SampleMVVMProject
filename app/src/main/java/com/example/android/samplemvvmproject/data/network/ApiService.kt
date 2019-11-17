@@ -1,6 +1,5 @@
 package com.example.android.samplemvvmproject.data.network
 
-import com.example.android.samplemvvmproject.data.network.response.Results
 import com.example.android.samplemvvmproject.data.network.response.UserResultsResponse
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

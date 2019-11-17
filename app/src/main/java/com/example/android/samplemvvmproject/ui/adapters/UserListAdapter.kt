@@ -1,5 +1,6 @@
 package com.example.android.samplemvvmproject.ui.adapters
 
+import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.android.samplemvvmproject.R
 import com.example.android.samplemvvmproject.data.network.response.Results
 import com.example.android.samplemvvmproject.databinding.RowUserListItemBinding
+import com.example.android.samplemvvmproject.util.toastS
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 
@@ -18,7 +20,9 @@ class UserListAdapter :
     ) {
 
 
+    lateinit var ctx: Context
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserListViewHolder {
+        ctx = parent.context
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding: RowUserListItemBinding =
             DataBindingUtil.inflate(layoutInflater, R.layout.row_user_list_item, parent, false)
@@ -29,10 +33,10 @@ class UserListAdapter :
         getItem(position).let { results ->
             holder.binding.tvUserGender.text = results.gender
             holder.binding.tvUserName.text =
-                "${results.name.first} ${results.name.first} ${results.name.last}"
+                "${results.name.title} ${results.name.first} ${results.name.last}"
             holder.binding.tvUsersAge.text = results.dob.age.toString() + " yrs"
             holder.binding.tvUserLocation.text =
-                "${results.location.city} ${results.location.country}"
+                "${results.location.city}, ${results.location.country}"
 
             Picasso.get().load(results.picture.thumbnail)
                 .error(R.drawable.ic_error_img)
@@ -47,11 +51,25 @@ class UserListAdapter :
                     }
 
                 })
-
-            holder.binding.cvAccept.setOnClickListener {
+            /*
+            * User got Accepted And used the group to remove the Accept and Declined Button
+            * */
+            holder.binding.ivAccept.setOnClickListener {
+                ctx.toastS("User Accepted")
+                holder.binding.tvResult.visibility = View.VISIBLE
+                holder.binding.tvResult.text = "Accepted"
+                holder.binding.tvResult.background = ctx.getDrawable(R.drawable.gradien_accept_bg)
+                holder.binding.removegroup.visibility = View.GONE
             }
-            holder.binding.cvDecline.setOnClickListener {
-
+            /*
+            * Same As the above
+            * */
+            holder.binding.ivDecline.setOnClickListener {
+                ctx.toastS("User Declined")
+                holder.binding.tvResult.visibility = View.VISIBLE
+                holder.binding.tvResult.text = "Declined"
+                holder.binding.tvResult.background = ctx.getDrawable(R.drawable.gradien_declin_bg)
+                holder.binding.removegroup.visibility = View.GONE
             }
         }
     }
