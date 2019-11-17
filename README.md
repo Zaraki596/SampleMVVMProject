@@ -13,21 +13,14 @@ It generates the random users according to which it generate the card view.
 In card view their is two clickable button on which accept and decline makes the users to accept it and decline it
 
  Tech Stack Used/Learned While Building this :
-```
-
  - Kotlin
  - Coroutines
  - Room
  - MVVM
 
-```
-
 # ToDo:
-```
 
- -  ~~DI(Dependency Injection) **Implemented KodeIn Dependency
-   Injection**~~ 
+ -  ~~DI(Dependency Injection) **Implemented KodeIn Dependency Injection**~~
  - Offline Availability
  - ~~Bug Fixes~~
 
-```
