@@ -22,9 +22,11 @@ interface ApiService {
                 .connectTimeout(1, TimeUnit.MINUTES)
                 .readTimeout(1, TimeUnit.MINUTES)
                 .callTimeout(1, TimeUnit.MINUTES)
+                    // This interceptor is just for logging we can add more interceptors over here in future
                 .addInterceptor(HttpLoggingInterceptor().apply {
                     this.level = HttpLoggingInterceptor.Level.BODY
                 })
+                    //Connectivity Interceptor to avoid crashes when going offline
                 .addInterceptor(connectivityInterceptor)
                 .build()
 
