@@ -1,7 +1,7 @@
 
 # Preview
 
-![Gif](https://imgur.com/gallery/C1Gx1RE)
+![Gif](https://media.giphy.com/media/d7T61ECrYFipsUdn6s/giphy.gif)
 
 
 
