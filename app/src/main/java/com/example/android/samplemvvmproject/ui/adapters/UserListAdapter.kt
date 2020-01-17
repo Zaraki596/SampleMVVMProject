@@ -30,7 +30,7 @@ class UserListAdapter :
     }
 
     override fun onBindViewHolder(holder: UserListViewHolder, position: Int) {
-        getItem(position).let { results ->
+        getItem(position)?.let { results ->
             holder.binding.tvUserGender.text = results.gender
             holder.binding.tvUserName.text =
                 "${results.name.title} ${results.name.first} ${results.name.last}"
